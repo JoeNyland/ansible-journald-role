@@ -1,11 +1,12 @@
 ---
-- name: Configure journal access for selected users
+- name: Configure journald
   become: true
   tags:
     - journal
+    - journald
     - journalctl
   block:
-    - name: Add user(s) to group
+    - name: Configure journal access for selected users
       user:
         name: "{{ item }}"
         groups: "{{ journalctl_group }}"

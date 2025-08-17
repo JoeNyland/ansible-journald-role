@@ -1,6 +1,6 @@
 galaxy_info:
   author: Joe Nyland
-  role_name: journalctl
+  role_name: journald
   namespace: joenyland
   description: Grants selected users access to system journals
   license: MIT
