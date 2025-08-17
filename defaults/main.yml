@@ -1,3 +1,4 @@
 ---
 journalctl_group: adm
 journalctl_users: []
+journald_config: {}

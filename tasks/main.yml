@@ -12,3 +12,12 @@
         groups: "{{ journalctl_group }}"
         append: true
       with_items: "{{ journalctl_users }}"
+    - name: Manage jounrald config file
+      template:
+        src: journald.conf.j2
+        dest: /etc/systemd/journald.conf
+        mode: '0644'
+        owner: root
+        group: root
+      notify: Restart systemd-journald
+      when: journald_config.keys() | length > 0
